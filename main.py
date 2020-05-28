@@ -14,17 +14,14 @@ os.system("cls")
 
 if resp == 1:
     support.msg("Registering a new question")
-    question_id = json_analisys.get_last_id() + 1
-    #ask the questtion
-    #ask the alternatives
-    # save {id: ID, question: QUESTION, a: A, b: B....}
-    json_analisys.write_json({"id": question_id,
-                                "question": "QUESTION",
-                                "a": "A",
-                                "b": "B",
-                                "c": "C",
-                                "d": "D",
-                                "e": "E"})
+    question_details = {}
+    question_details["question_id"] = json_analisys.get_last_id() + 1
+    question_details["question"] = input("Please insert the question: ")
+    alternatives = ["A", "B", "C", "D", "E"]
+    for alternative in alternatives:
+        question_details[f"{alternative}"] = input(f"Please insert the {alternative} alternative: ")
+
+    json_analisys.write_json(question_details)
 # elif resp == 2:
     
 # elif resp == 3:
