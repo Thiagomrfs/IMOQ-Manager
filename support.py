@@ -7,9 +7,10 @@ def horizontal_line(len=10):
     print("="*len)
 
 def verify_int(value, accepted):
-    if value in accepted:
-        return value
-    else:
+    try:
+        if int(value) in accepted:
+            return int(value)
+    except:
         while True:
             try:
                 value = int(input("\033[31mPlease insert a valid value: \033[m"))
@@ -18,7 +19,6 @@ def verify_int(value, accepted):
                     break
             except:
                 pass
-
     return value
 
 def menu(title, *options):

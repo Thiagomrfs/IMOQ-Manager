@@ -15,6 +15,14 @@ def write_json(new_data):
     with open("database.json", "w+") as db:
         json.dump(data, db, indent=4, separators=(",", ":"))
 
+def get_last_id():
+    with open("database.json") as db:
+        data = json.load(db)
+    count = 0
+    for question in data: 
+        count += 1
+    return count
+
 try: 
     db = open("database.json")
     json.load(db)
