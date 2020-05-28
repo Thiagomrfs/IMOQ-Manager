@@ -29,3 +29,17 @@ def menu(title, *options):
     print()
     resp = verify_int(input("Please choose an option: "), range(1, count+1))
     return resp
+
+def confirm_question(question):
+    print("\n\033[31mAre these informations correct?\n\033[m")
+    print("\033[34m" + question["question"] + "\033[34m")
+    print("\033[33m")
+    print("A) " + question["A"])
+    print("B) " + question["B"])
+    print("C) " + question["C"])
+    print("D) " + question["D"])
+    print("E) " + question["E"])
+    print("\033[m")
+
+    resp = input("Are you sure? ")
+    return resp
