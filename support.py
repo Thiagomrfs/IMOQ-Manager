@@ -21,6 +21,16 @@ def verify_int(value, accepted):
                 pass
     return value
 
+def verify_yes_no(resp):
+    if resp.upper() in "YN" and resp != "":
+        return resp.upper()
+    else:
+        while True:
+            resp = input("\033[31mPlease insert a valid response [Y/N]: \033[m")
+            if resp.upper() in "YN" and resp != "":
+                return resp.upper()
+                break
+
 def menu(title, *options):
     count = 1
     for option in options:
@@ -41,5 +51,5 @@ def confirm_question(question):
     print("E) " + question["E"])
     print("\033[m")
 
-    resp = input("Are you sure? ")
+    resp = verify_yes_no(input("Are you sure? "))
     return resp

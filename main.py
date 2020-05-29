@@ -21,9 +21,9 @@ if resp == 1:
     for alternative in alternatives:
         question_details[f"{alternative}"] = input(f"Please insert the {alternative} alternative: ")
     os.system("cls")
-    
+
     confirm_resp = support.confirm_question(question_details)
-    if confirm_resp.upper() == "S":
+    if confirm_resp == "Y":
         json_analisys.write_json(question_details)
     else:
         pass
