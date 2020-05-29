@@ -1,4 +1,3 @@
-import json
 import json_analisys
 import support
 import os
@@ -27,10 +26,10 @@ if resp == 1:
         json_analisys.write_json(question_details)
     else:
         pass
-# elif resp == 2:
-    
-# elif resp == 3:
-
-# elif resp == 4:
-
-# elif resp == 5:
+elif resp == 2:
+    support.msg("Searching by ID")
+    json_analisys.search_by_id()
+elif resp == 3:
+    ...
+elif resp == 4:
+    exit()

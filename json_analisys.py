@@ -1,5 +1,5 @@
 import json
-
+import support
 
 def read():
     with open("database.json", "r+") as db:
@@ -23,8 +23,19 @@ def get_last_id():
         count += 1
     return count
 
-def see_question():
-    ...
+def search_by_id():
+    with open("database.json", "r+", encoding="utf8") as db:
+        data = json.load(db)
+    wanted_question = support.verify_int(input("Insert the ID of the wanted question: "), range(1, len(data)+1))
+    found = data[wanted_question - 1]
+    print("\033[34m" + found["question"] + "\033[34m")
+    print("\033[33m")
+    print("A) " + found["A"])
+    print("B) " + found["B"])
+    print("C) " + found["C"])
+    print("D) " + found["D"])
+    print("E) " + found["E"])
+    print("\033[m")
 
 
 try: 

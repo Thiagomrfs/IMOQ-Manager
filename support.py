@@ -10,16 +10,17 @@ def verify_int(value, accepted):
     try:
         if int(value) in accepted:
             return int(value)
+        else:
+            raise TypeError
     except:
         while True:
             try:
                 value = int(input("\033[31mPlease insert a valid value: \033[m"))
                 if value in accepted:
-                    return value
+                    return int(value)
                     break
             except:
                 pass
-    return value
 
 def verify_yes_no(resp):
     if resp.upper() in "YN" and resp != "":
