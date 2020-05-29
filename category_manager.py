@@ -14,5 +14,3 @@ def see_categories():
 
 def choose_category(): 
     ...
-
-create_category("verbo")
