@@ -2,12 +2,15 @@ import json_analisys
 import support
 import os
 import exam_creation
+import category_manager
 
 support.msg("Welcome to the IMOQ managing system")
 resp = support.menu("Choose your action",
                     "Register a new question",
                     "Search a question by id",
                     "Create exam",
+                    "Create category",
+                    "Select category",
                     "Exit program")
 os.system("cls")
 
@@ -31,8 +34,15 @@ elif resp == 2:
     support.msg("Searching by ID")
     json_analisys.search_by_id()
 elif resp == 3:
+    support.msg("Create a new exam")
     number_of_questions = exam_creation.ask_number_of_questions()
     exam = exam_creation.create_exam(number_of_questions)
     exam_creation.view_exam(exam)   
 elif resp == 4:
+    support.msg("Creating a new category")
+    category = input("Insert the category: ")
+    category_manager.create_category(category)
+elif resp == 5:
+    support.msg("Category selection")
+elif resp == 6:
     exit()

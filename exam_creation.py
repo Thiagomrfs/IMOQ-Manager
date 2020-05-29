@@ -17,7 +17,7 @@ def ask_number_of_questions():
                 return number_of_questions
 
 def create_exam(questions=10):
-    with open("database.json") as db:
+    with open("database.json", "r+", encoding="utf8") as db:
         data = json.load(db)
     if len(data) < questions:
         print("\033[31mFatal error: There's no questions enough in the database\033[m")
