@@ -1,12 +1,14 @@
 import json
 import support
 import json_analisys
-from pathlib import Path
+import os
 
+if "Data" not in os.listdir():
+    os.mkdir(f"{os.getcwd()}/Data")
 
 def create_category(category):
-    atual_directory = Path("C:\Development\IMOQ\Data")
-    with open(f"{p}\{category.capitalize()}.json", "a+", encoding="utf8") as category:
+    os.chdir("./Data")
+    with open(f"{category.capitalize()}.json", "a+", encoding="utf8") as category:
         category.write("[]")
 
 def see_categories():
