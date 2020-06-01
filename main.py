@@ -33,12 +33,13 @@ if resp == 1:
         json_analisys.write_json(question_details, question_category)
     else:
         pass
-
 elif resp == 2:
     support.msg("Searching by ID")
-    json_analisys.search_by_id()
+    question_category = json_analisys.ask_category()
+    json_analisys.search_by_id(question_category)
 elif resp == 3:
     support.msg("Create a new exam")
+    question_category = json_analisys.ask_category()
     number_of_questions = exam_creation.ask_number_of_questions()
     exam = exam_creation.create_exam(number_of_questions)
     exam_creation.view_exam(exam)   
