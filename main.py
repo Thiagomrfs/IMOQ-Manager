@@ -44,5 +44,6 @@ elif resp == 4:
     category_manager.create_category(category)
 elif resp == 5:
     support.msg("Category selection")
+    category_manager.see_categories()
 elif resp == 6:
     exit()
